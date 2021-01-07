@@ -1,0 +1,38 @@
+<div class="sm-jumbotron center-align py-3">
+    <h1 class="display-4 text-center">Laptop Customer Service Portal</h1>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <app-laptop-detail-form></app-laptop-detail-form>
+    </div>
+    <div class="col-md-6">
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th> Summary</th>
+            <th> Description</th>
+            <th> Date</th>
+            <th> Complaint Type</th>
+            <th> Status</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ld of service.list">
+            <td (click)="populateForm(ld)">{{ld.summary}}</td>
+            <td (click)="populateForm(ld)">{{ld.description}} </td>
+            <td (click)="populateForm(ld)">{{ld.date}}</td>
+            <td (click)="populateForm(ld)">{{ld.complaintType}}</td>
+            <td>Processing..</td>
+            <td><button  routerLink="/ticket-view"> view </button></td>
+            <td>
+                <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(ld.laptopDetailId)"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+
+
+
+

@@ -1,0 +1,37 @@
+<form autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+
+    <div novalidate autocomplete="off" class="form-group">
+        <label>First Name</label>
+        <input class="form-control form-control-lg" placeholder="First Name" name="firstName"
+            #firstName="ngModel" [(ngModel)]="service.formData.firstName"
+            required [class.invalid]="firstName.invalid &#038;&#038; firstName.touched">
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input class="form-control form-control-lg" placeholder="Last Name" name="lastName"
+            #lastName="ngModel" [(ngModel)]="service.formData.lastName"
+            required [class.invalid]="lastName.invalid &#038;&#038; lastName.touched">
+    </div>
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input class="form-control form-control-lg" placeholder="10 Digit Mobile Number" name="phone"
+            #phone="ngModel" [(ngModel)]="service.formData.phone"
+            required maxlength="10" [class.invalid]="phone.invalid &#038;&#038; phone.touched">
+    </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control form-control-lg" placeholder="This will be your Username" name="email"
+                #email="ngModel" [(ngModel)]="service.formData.email"
+                required minlength="3" [class.invalid]="email.invalid &#038;&#038; email.touched">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control form-control-lg" placeholder="Password (Minimum 5 charecters)" name="password"
+                #password="ngModel" [(ngModel)]="service.formData.password"
+                required minlength="5" [class.invalid]="password.invalid &#038;&#038; password.touched">
+        </div>
+
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>

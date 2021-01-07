@@ -1,0 +1,29 @@
+<div class="col s4 offset-s1">
+    <div class="card">
+      <div class="sm-jumbotron center-align py-3">
+        <h2>Laptop Customer Service Portal</h2>
+      </div>
+    </div>  
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <h4>User Registration</h4>
+    <app-registration-detail-form> </app-registration-detail-form>
+  </div>
+  <div class="col-md-6">
+    <h4>Login</h4>
+    <form autocomplete="off" method="post" #form="ngForm" (submit)="loginUser(form)">
+      <div class="form-group">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="userName"   [(ngModel)]="service.userName"  required>
+    
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="passWord" [(ngModel)]="service.passWord" required>
+    
+        <button class= "btn btn-info btn-lg btn-block" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
